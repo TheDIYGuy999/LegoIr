@@ -13,5 +13,10 @@ See [LEGO_Power_Functions_RC_v120.pdf](https://github.com/TheDIYGuy999/LegoIr/bl
 
 See [example](https://github.com/TheDIYGuy999/LegoIr/blob/master/examples/LegoIr/LegoIr.ino).
 
+## Schematic
+
+See [example](https://github.com/TheDIYGuy999/LegoIr/blob/master/IR%20LED%20Driver.png).
+
+
 (c) 2013 Jurriaan Pruis
 Modified and enhanced by TheDIYGuy999, June 2016
