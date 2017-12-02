@@ -9,6 +9,14 @@ And [Jurriaans library] (https://github.com/jurriaan/Arduino-PowerFunctions)
 
 See [LEGO_Power_Functions_RC_v120.pdf](https://github.com/TheDIYGuy999/LegoIr/blob/master/LEGO_Power_Functions_RC_v120.pdf) for more info
 
+## Changelog
+
+New in V 1.0:
+- Library is now also compatible with CPU's slower than 16MHz. Tested an Arduino Pro Mini 3.3V / 8MHz board
+
+New in V 1.1:
+- Library is now also compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
+
 ## Usage
 
 See [example](https://github.com/TheDIYGuy999/LegoIr/blob/master/examples/LegoIr/LegoIr.ino).
@@ -19,4 +27,4 @@ See [example](https://github.com/TheDIYGuy999/LegoIr/blob/master/IR%20LED%20Driv
 
 
 (c) 2013 Jurriaan Pruis
-Modified and enhanced by TheDIYGuy999, June 2016
+Modified and enhanced by TheDIYGuy999, June 2016, December 2017

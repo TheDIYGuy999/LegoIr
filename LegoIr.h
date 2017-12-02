@@ -8,6 +8,9 @@
 // - Begin function added to allow channel switching during runtime
 // - Modifications to make it also compatible with 8MHz Arduino versions
 
+// Modified and enhanced by TheDIYGuy999, December 2017:
+// - Library V1.1 is now compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
+
 #ifndef LegoIr_h
 #define LegoIr_h
 

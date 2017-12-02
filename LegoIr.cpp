@@ -8,6 +8,9 @@
 // - Begin function added to allow channel switching during runtime
 // - Modifications to make it also compatible with 8MHz Arduino versions
 
+// Modified and enhanced by TheDIYGuy999, December 2017:
+// - Library V1.1 is now compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
+
 #define toggle() _toggle ^= 0x8
 #define CHECKSUM() (0xf ^ _nib1 ^ _nib2 ^ _nib3)
 
@@ -96,18 +99,16 @@ void LegoIr::start_stop_bit()
 }
 
 // Send a bit
-// NOTE: delayMicroseconds() is only active on a 16MHz CPU, in order to achieve
+// NOTE: delayMicroseconds() is only active on a >= 16MHz CPU, in order to achieve
 // a correct timing on a 8MHz CPU. Added June 2016 by TheDIYGuy999
 void LegoIr::send_bit() {
   for(uint8_t i = 0; i < 6; i++) {
     digitalWrite(_pin, HIGH);
-    //PORTD |= _BV(PD0); // HIGH pin 3
-#if F_CPU == 16000000 // 16MHz CPU
+#if F_CPU >= 16000000 // 16MHz or faster CPU
     delayMicroseconds(HALF_PERIOD);
 #endif
     digitalWrite(_pin, LOW);
-    //PORTD &= ~_BV(PD0); // LOW pin 3
-#if F_CPU == 16000000 // 16MHz CPU
+#if F_CPU >= 16000000 // 16MHz or faster CPU
     delayMicroseconds(HALF_PERIOD);
 #endif
   }
