@@ -17,6 +17,10 @@ New in V 1.0:
 New in V 1.1:
 - Library is now also compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
 
+New in V 1.11:
+- The STM32 MPU does not like delays with a duration of zero! This caused a crash on LEGO channel 4
+- This bug is now fixed and you can use all 4 channels
+
 ## Usage
 
 See [example](https://github.com/TheDIYGuy999/LegoIr/blob/master/examples/LegoIr/LegoIr.ino).

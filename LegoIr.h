@@ -9,7 +9,7 @@
 // - Modifications to make it also compatible with 8MHz Arduino versions
 
 // Modified and enhanced by TheDIYGuy999, December 2017:
-// - Library V1.1 is now compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
+// - Library V1.11 is now compatible with CPU's faster than 16MHz. Tested on an STM32 ARM "Maple" board
 
 #ifndef LegoIr_h
 #define LegoIr_h
@@ -30,12 +30,12 @@
 #define HIGH_PAUSE IR_CYCLES(21) // 21
 #define LOW_PAUSE IR_CYCLES(10) // 10
 /*
-#if F_CPU == 8000000 // 8MHz CPU
-#define HALF_PERIOD IR_CYCLES(0.5) //optimal signal strength with 0.5
-#endif*/
+ #if F_CPU == 8000000 // 8MHz CPU
+ #define HALF_PERIOD IR_CYCLES(0.5) //optimal signal strength with 0.5
+ #endif*/
 
 //#if F_CPU == 16000000 // 16MHz CPU
-#define HALF_PERIOD IR_CYCLES(0.3) //optimal signal strength with 0.3  instead of 0.5
+#define HALF_PERIOD IR_CYCLES(0.5) //optimal signal strength with 0.3  instead of 0.5
 //#endif
 
 #define MAX_MESSAGE_LENGTH IR_CYCLES(522) // 2 * 45 + 16 * 27 = 522
@@ -65,8 +65,8 @@
 
 class LegoIr
 {
-	public:
-  	LegoIr();
+public:
+    LegoIr();
     void begin(uint8_t, uint8_t);
     void single_pwm(uint8_t, uint8_t);
     void single_increment(uint8_t);
@@ -74,8 +74,8 @@ class LegoIr
     void red_pwm(uint8_t);
     void blue_pwm(uint8_t);
     void combo_pwm(uint8_t, uint8_t);
-
-  private:
+    
+private:
     void pause(uint8_t);
     void send_bit();
     void send();
